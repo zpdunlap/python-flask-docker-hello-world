@@ -1,4 +1,4 @@
-FROM python:3.7-alpine3.9
+FROM zpdunlap/flask_app:latest
 MAINTAINER Shekhar Gulati "shekhargulati84@gmail.com"
 RUN apk add --no-cache build-base libffi-dev libressl-dev
 COPY . /app
