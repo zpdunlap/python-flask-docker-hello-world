@@ -8,4 +8,3 @@ RUN pip install -r requirements.txt &&\
   pip install gunicorn
 ENTRYPOINT ["python"]
 CMD ["app.py"]
-
