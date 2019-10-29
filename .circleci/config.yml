@@ -32,8 +32,10 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            docker build -t simple-flask-app:latest .
-
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build .
       - save_cache:
           paths:
             - ./venv
