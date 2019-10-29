@@ -36,7 +36,12 @@ jobs:
       - run:
           name: Build application Docker image
           command: |
-            docker build .
+            docker build -t zpdunlap/flask_app .
+      - run:
+          name: Push Docker Image
+          command: |
+            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push zpdunlap/flask_app:latest
       - save_cache:
           paths:
             - ./venv
